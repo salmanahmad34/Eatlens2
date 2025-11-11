@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EatLens - AI Nutrition Analyzer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --color-primary-50:  #f0fdfa;
+        --color-primary-100: #ccfbf1;
+        --color-primary-500: #14b8a6;
+        --color-primary-600: #0d9488;
+        --color-primary-700: #0f766e;
+        --color-primary-900: #134e4a;
+        
+        --color-slate-50:  #f8fafc;
+        --color-slate-100: #f1f5f9;
+        --color-slate-200: #e2e8f0;
+        --color-slate-300: #cbd5e1;
+        --color-slate-400: #94a3b8;
+        --color-slate-500: #64748b;
+        --color-slate-600: #475569;
+        --color-slate-700: #334155;
+        --color-slate-900: #0f172a;
+        
+        --color-white: #ffffff;
+        --color-black: #000000;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background-color: var(--color-white);
+        color: var(--color-slate-700);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      h1, h2, h3, h4, h5, h6 {
+          font-family: 'Poppins', sans-serif;
+          color: var(--color-slate-900);
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: var(--color-slate-100); }
+      ::-webkit-scrollbar-thumb { background: var(--color-slate-300); border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: var(--color-slate-400); }
+
+      /* Animations */
+      @keyframes slide-in-from-bottom {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-slide-in-from-bottom {
+        animation: slide-in-from-bottom 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      }
+      
+      @keyframes fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.8s ease-out forwards;
+      }
+      .animate-fade-in-fast {
+        animation: fade-in 0.4s ease-out forwards;
+      }
+
+      .animate-fade-in-stagger > * {
+        animation: fade-in 0.5s both;
+      }
+      
+      @keyframes fill-bar {
+        from { width: 0%; }
+      }
+      .fill-bar-animation {
+        animation: fill-bar 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      }
+      
+      @keyframes shimmer-loader {
+        100% {
+            transform: translateX(100%);
+        }
+      }
+      .shimmer-wrapper {
+        position: relative;
+        overflow: hidden;
+      }
+      .shimmer-wrapper::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-100%);
+        background-image: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0,
+          rgba(255, 255, 255, 0.2) 20%,
+          rgba(255, 255, 255, 0.5) 60%,
+          rgba(255, 255, 255, 0)
+        );
+        animation: shimmer-loader 1.5s infinite;
+        content: '';
+      }
+      
+      @keyframes scale-in {
+        from { opacity: 0; transform: scale(0.5); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      .animate-scale-in {
+        animation: scale-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      }
+
+      @keyframes slideInUp {
+        from {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      .animate-slideInUp {
+          animation: slideInUp 0.5s ease-out forwards;
+      }
+    </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "firebase/app": "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js",
+    "firebase/auth": "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js",
+    "firebase/firestore": "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js",
+    "firebase/analytics": "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js",
+    "firebase/": "https://aistudiocdn.com/firebase@^12.5.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

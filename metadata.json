@@ -1,0 +1,7 @@
+{
+  "name": "Eatlens",
+  "description": "A simple landing page and image nutrition analyzer. Upload or capture a photo of your meal to get instant macronutrient analytics (protein, carbs, fat) powered by Gemini.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
