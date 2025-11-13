@@ -351,7 +351,6 @@ export const RecipeGenerator: React.FC = () => {
             )}
             <div className="mt-8 text-center animate-fade-in" style={{animationDelay: '200ms'}}>
                 <button onClick={handleShowSample} className="group inline-flex items-center gap-2 px-6 py-2 text-gray-600 font-medium rounded-full bg-gray-100/80 border border-gray-200 hover:border-primary-400 hover:text-primary-700 transition-all duration-300" style={{borderColor: 'var(--color-primary-400)', color: 'var(--color-primary-700)'}}>
-                    {/* Fix: Removed invalid 'style' prop from SparklesIcon component. */}
                     <SparklesIcon className="w-5 h-5 text-primary-500/70 group-hover:text-primary-600 transition-colors group-hover:scale-110" />
                     See a sample recipe
                 </button>

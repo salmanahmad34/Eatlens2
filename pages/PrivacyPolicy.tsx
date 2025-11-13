@@ -7,7 +7,7 @@ export const PrivacyPolicy: React.FC = () => (
             <h1 className="text-4xl font-extrabold text-gray-900 mb-6">Privacy Policy</h1>
             <div className="prose prose-lg text-gray-700 max-w-none space-y-4">
                 <p><em>Last Updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</em></p>
-                <p>Your privacy is important to us. It is NutriLens's policy to respect your privacy regarding any information we may collect from you across our application.</p>
+                <p>Your privacy is important to us. It is EatLens's policy to respect your privacy regarding any information we may collect from you across our application.</p>
                 
                 <h2 className="text-2xl font-bold text-gray-800 !mt-8 !mb-3">1. Information We Collect</h2>
                 <p>We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent. We also let you know why we’re collecting it and how it will be used.</p>
@@ -36,7 +36,7 @@ export const PrivacyPolicy: React.FC = () => (
                 <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.</p>
                 
                 <h2 className="text-2xl font-bold text-gray-800 !mt-8 !mb-3">Contact Us</h2>
-                <p>If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:support@nutrilens.com" className="text-primary-700 hover:underline" style={{color: 'var(--color-primary-700)'}}>support@nutrilens.com</a></p>
+                <p>If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:support@eatlens.com" className="text-primary-700 hover:underline" style={{color: 'var(--color-primary-700)'}}>support@eatlens.com</a></p>
             </div>
         </Card>
     </div>

@@ -37,7 +37,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
                     // Check for Pro plan expiration
                     if (appUser.plan === 'pro' && appUser.planExpiryDate && Date.now() > appUser.planExpiryDate) {
-                        console.log(`Pro plan for ${appUser.email} has expired. Downgrading.`);
                         const newLastResetDate = Date.now();
                         const updates = {
                             plan: 'free' as const,
